@@ -4,7 +4,7 @@
         "builder": "NIXPACKS"
     },
     "deploy": {
-        "startCommand": "python -m pip install Pillow && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn wiki_api.wsgi",
+        "startCommand": "python -m pip install Pillow && python manage.py makemigrations && python manage.py migrate && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn wiki_api.wsgi",
         "restartPolicyType": "ON_FAILURE",
         "restartPolicyMaxRetries": 10
     }
